@@ -13,7 +13,7 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 UPLOAD_FOLDER = '/tmp/'
 
 
-@app.route('/user', methods=['POST'])
+@app.route('/astro', methods=['POST'])
 def createUser():
     try:
         user = db.find_one_and_update({'user': request.json['user']},{'$set':{'positionX': request.json['positionX'],'positionY': request.json['positionY'], 'items': request.json['items'], 'Equipo': request.json['Equipo']}})
